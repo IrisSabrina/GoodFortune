@@ -1,0 +1,2 @@
+# GoodFortune
+Good Fortune App
