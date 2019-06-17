@@ -4,8 +4,10 @@
 // packages
 import React, { Component } from 'react';
 // data
-import fortunes from './data.js'
-console.log(fortunes);
+// import fortunes from './data.js'
+import nightFortunes from './data2.js'
+// console.log(fortunes);
+console.log(nightFortunes);
 
 ////////////////
 // METHODS
@@ -23,7 +25,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      fortunes: fortunes
+      fortunes: fortunes,
+      nightFortunes: nightFortunes
     }
   }
   render() {
