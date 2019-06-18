@@ -1,3 +1,5 @@
+// These fortunes should be used when someone enters "moonlight" as their favorite light to travel by.
+
 const nightFortunes =
 {
   title: 'Fortunes For the Fortunate of an Evening',

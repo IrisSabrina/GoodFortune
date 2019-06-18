@@ -1,3 +1,5 @@
+// These fortunes should be used when someone enters "sunlight" as their favorite light to travel by.
+
 const fortunes =
 {
   title: 'Fortunes For the Fortunate',
