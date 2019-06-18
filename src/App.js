@@ -4,9 +4,9 @@
 // packages
 import React, { Component } from 'react';
 // data
-// import fortunes from './data.js'
+import fortunes from './data.js'
 import nightFortunes from './data2.js'
-// console.log(fortunes);
+console.log(fortunes);
 console.log(nightFortunes);
 
 ////////////////
@@ -26,7 +26,7 @@ class App extends Component {
     super()
     this.state = {
       fortunes: fortunes,
-      nightFortunes: nightFortunes
+      nightFortunes: ''
     }
   }
   render() {
@@ -35,6 +35,7 @@ class App extends Component {
         <header>
           <h1>Good Fortune to You, Stranger...</h1>
           <h3>May the future smile upon you.</h3>
+          <h4>{ fortunes.sample }</h4>
         </header>
       </div>
     )
