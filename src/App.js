@@ -63,7 +63,15 @@ class App extends Component {
           <h1>Good Fortune to You, Stranger...</h1>
           <h3>May the future smile upon you.</h3>
         </header>
-         <h4>{ this.state.fortune.fortune }</h4>
+        <div class="lightSelection">
+              <h3>Now, make your choice.</h3>
+              <select id="lightType">
+                <option>Select</option>
+                <option value="daylight">Daylight</option>
+                <option value="moonlight">Moonlight</option>
+              </select>
+           <h4>{ this.state.fortune.fortune }</h4>
+           </div>
       </div>
     )
   }
@@ -71,7 +79,7 @@ class App extends Component {
 
 // this.state.fortune.fortune refers to the state in the super constructor of "fortune" + the "fortune" key in the fortunes array.
 
-// <h4>{ fortunes.sample }</h4> // <-- This did not work. Tried putting it in the render under the <h3>. This didn't work because it's a Ruby method and doesn't work in JS.
+// <h4>{ fortunes.sample }</h4> // <-- This did not work. Tried putting it in the render under the <h3>. This didn't work because it's a Ruby method and doesn't work in JS. Oops.
 
 ////////////////
 // EXPORT
