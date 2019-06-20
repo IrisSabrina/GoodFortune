@@ -3,6 +3,7 @@
 ////////////////
 // packages
 import React, { Component } from 'react';
+import FormContainer from './components/form';
 // data
 import fortunes from './data.js'
 import nightFortunes from './data2.js'
@@ -24,19 +25,18 @@ class App extends Component {
     super()
     this.state = {
       fortune:'',
-      userChoice: 'day'
     }
-    this.chooseRandomFortune = this.chooseRandomFortune.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   // because we used this.state.userChoice in the chooseRandomFortune, we need to bind the "this" to the constructor.
 
-  componentDidMount() {
-    this.chooseRandomFortune()
-  } // not sure why we did this. Does it just access the data files?
+  // componentDidMount() {
+  //   this.chooseRandomFortune()
+  // } // This was a test to see if the Random Fortune worked. Because it only renders one time and won't create a never ending loop.
 
-  chooseRandomFortune() {
-   if(this.state.userChoice === 'moonlight') {
+  handleChange(choice) {
+   if(choice === 'moonlight') {
      // grab a random fortune from night
      // randomVal is calculating a random index number x the length of one array
      let randomVal = Math.floor(Math.random() * nightFortunes.fortunes.length)
@@ -47,7 +47,7 @@ class App extends Component {
      })
      console.log('this is randomVal', randomVal, randomFortune)
    } else {
-     // grab a random fortune from night
+     // grab a random fortune from day
      let randomDayVal = Math.floor(Math.random() * fortunes.fortunes.length)
      let randomDayFortune = fortunes.fortunes[randomDayVal]
      this.setState({
@@ -57,21 +57,17 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="fortune-container">
         <header>
           <h1>Good Fortune to You, Stranger...</h1>
           <h3>May the future smile upon you.</h3>
         </header>
-        <div class="lightSelection">
-              <h3>Now, make your choice.</h3>
-              <select id="lightType">
-                <option>Select</option>
-                <option value="daylight">Daylight</option>
-                <option value="moonlight">Moonlight</option>
-              </select>
+        <div className="yourFortune">
+          <FormContainer />
            <h4>{ this.state.fortune.fortune }</h4>
-           </div>
+        </div>
       </div>
     )
   }
