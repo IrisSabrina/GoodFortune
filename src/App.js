@@ -26,7 +26,8 @@ class App extends Component {
     this.state = {
       fortune:'',
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleFortune = this.handleFortune.bind(this)
+    this.clearFortune = this.clearFortune.bind(this)
   }
 
   // because we used this.state.userChoice in the chooseRandomFortune, we need to bind the "this" to the constructor.
@@ -35,7 +36,7 @@ class App extends Component {
   //   this.chooseRandomFortune()
   // } // This was a test to see if the Random Fortune worked. Because it only renders one time and won't create a never ending loop.
 
-  handleChange(choice) {
+  handleFortune(choice) {
    if(choice === 'moonlight') {
      // grab a random fortune from night
      // randomVal is calculating a random index number x the length of one array
@@ -56,18 +57,24 @@ class App extends Component {
    }
   }
 
+  clearFortune() {
+    this.setState({ fortune: ''})
+  }
+
+
   render() {
     console.log(this.state);
     return (
-      <div className="fortune-container">
+      <div className="container">
         <header>
           <h1>Good Fortune to You, Stranger...</h1>
           <h3>May the future smile upon you.</h3>
         </header>
         <div className="yourFortune">
-          <FormContainer />
+          <FormContainer handleFortune={this.handleFortune}/>
            <h4>{ this.state.fortune.fortune }</h4>
         </div>
+        <button className="button-primary" type="button" onClick={ this.clearFortune }>Clear this fortune for now.</button>
       </div>
     )
   }
