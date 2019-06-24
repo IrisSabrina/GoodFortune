@@ -74,7 +74,7 @@ class App extends Component {
           <FormContainer handleFortune={this.handleFortune}/>
            <h4>{ this.state.fortune.fortune }</h4>
         </div>
-        <button className="button-primary" type="button" onClick={ this.clearFortune }>Clear this fortune for now.</button>
+        <button type="button" onClick={ this.clearFortune }>Clear this fortune for now.</button>
       </div>
     )
   }
