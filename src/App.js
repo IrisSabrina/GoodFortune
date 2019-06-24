@@ -3,6 +3,7 @@
 ////////////////
 // packages
 import React, { Component } from 'react';
+import Clouds from './components/animation';
 import FormContainer from './components/form';
 // data
 import fortunes from './data.js'
@@ -70,6 +71,7 @@ class App extends Component {
         <header>
           <h1>Fortunes for the Un/Fortunate</h1>
           <h3>May the future smile upon you, Stranger...</h3>
+        <Clouds />
         </header>
         </div>
         <div className="yourFortune">
@@ -89,6 +91,8 @@ class App extends Component {
 // this.state.fortune.fortune refers to the state in the super constructor of "fortune" + the "fortune" key in the fortunes array.
 
 // <h4>{ fortunes.sample }</h4> // <-- This did not work. Tried putting it in the render under the <h3>. This didn't work because it's a Ruby method and doesn't work in JS. Oops.
+
+// found code for animated clouds here: https://codepen.io/WebSonick/pen/vjmgu
 
 ////////////////
 // EXPORT
