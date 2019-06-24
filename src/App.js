@@ -7,8 +7,8 @@ import FormContainer from './components/form';
 // data
 import fortunes from './data.js'
 import nightFortunes from './data2.js'
-console.log(fortunes);
-console.log(nightFortunes);
+// console.log(fortunes);
+// console.log(nightFortunes);
 
 ////////////////
 // METHODS
@@ -66,15 +66,21 @@ class App extends Component {
     console.log(this.state);
     return (
       <div className="container">
+        <div className="header">
         <header>
-          <h1>Good Fortune to You, Stranger...</h1>
-          <h3>May the future smile upon you.</h3>
+          <h1>Fortunes for the Un/Fortunate</h1>
+          <h3>May the future smile upon you, Stranger...</h3>
         </header>
+        </div>
         <div className="yourFortune">
           <FormContainer handleFortune={this.handleFortune}/>
+          <div className="fortuneReturn">
            <h4>{ this.state.fortune.fortune }</h4>
+          </div>
         </div>
-        <button type="button" onClick={ this.clearFortune }>Clear this fortune for now.</button>
+        <div className="button">
+          <button type="button" onClick={ this.clearFortune }>Clear this fortune for now.</button>
+        </div>
       </div>
     )
   }
